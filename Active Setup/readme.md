@@ -11,11 +11,13 @@ HKEY_CURRENT_USER\Software\Wow6432Node\Microsoft\Active Setup\Installed Componen
 
 #### Message command
 ```powershell
-msg * /v Dont use torrents on company network
+cmd /c echo Running from active setup && whoami && pause
 ```
+
 #### Download Brave
 Download link: [Brave](https://github.com/brave/brave-browser) <br />
 
 ```powershell
 C:\install\BraveBrowserStandaloneSetup.exe /silent /install
 ```
+
