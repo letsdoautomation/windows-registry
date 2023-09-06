@@ -2,6 +2,10 @@
 
 <b>Documentation:</b> [Run and RunOnce Registry Keys](https://learn.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys) <br />
 
+# Short info
+## Run vs RunOnce
+
+
 # Examples
 ## Runing CMD in HKCU
 ```powershell
