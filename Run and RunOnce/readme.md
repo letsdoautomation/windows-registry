@@ -3,17 +3,21 @@
 <b>Documentation:</b> [Run and RunOnce Registry Keys](https://learn.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys) <br />
 
 # Short info
-Run and RunOnce allows us to run applications, commands, and scripts after a successful user sign-in to the computer.
+Run and RunOnce allows us to run applications, commands, and scripts after user successfuly sign-in to the computer.
+
+## Run vs RunOnce
+* <b>Run</b> - Computer runs <b>values</b> under <b>Run</b> key after users successfuly sign-in to the computer.
+```mermaid
+flowchart LR
+    a["User sign-in to the computer"] --> b["Computer loads explorer.exe"] --> c["Computer runs values under Run key"] --> a
+```
+* <b>RunOnce</b> - Computer first deletes the <b>entries</b> under <b>RunOnce</b> key are deleted after users sign-in to the computer and then computer runs the values.
 
 ## Registry key locations
 * <b>HKEY_CURRENT_USER</b>\Software\Microsoft\Windows\CurrentVersion\\<b>Run</b>
 * <b>HKEY_CURRENT_USER</b>\Software\Microsoft\Windows\CurrentVersion\\<b>RunOnce</b>
 * <b>HKEY_LOCAL_MACHINE</b>\Software\Microsoft\Windows\CurrentVersion\\<b>Run</b>
 * <b>HKEY_LOCAL_MACHINE</b>\Software\Microsoft\Windows\CurrentVersion\\<b>RunOnce</b>
-
-## Run vs RunOnce
-* <b>Run</b> - The <b>values</b> under <b>Run</b> key run every time users sign-in to the computer.
-* <b>RunOnce</b> - The <b>entries</b> under <b>RunOnce</b> key are deleted after users sign-in to the computer and then computer runs the values.
 
 ## HKEY_LOCAL_MACHINE vs HKEY_CURRENT_USER
 * <b>CURRENT_USER</b> - Runs the values only for the user that have the registry entries
