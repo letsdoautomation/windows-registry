@@ -3,8 +3,21 @@
 <b>Documentation:</b> [Run and RunOnce Registry Keys](https://learn.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys) <br />
 
 # Short info
-## Run vs RunOnce
+## Registry key locations
+* <b>HKEY_CURRENT_USER</b>\Software\Microsoft\Windows\CurrentVersion\\<b>Run</b>
+* <b>HKEY_CURRENT_USER</b>\Software\Microsoft\Windows\CurrentVersion\\<b>RunOnce</b>
+* <b>HKEY_LOCAL_MACHINE</b>\Software\Microsoft\Windows\CurrentVersion\\<b>Run</b>
+* <b>HKEY_LOCAL_MACHINE</b>\Software\Microsoft\Windows\CurrentVersion\\<b>RunOnce</b>
 
+## Run vs RunOnce
+* <b>Run</b> - The <b>values</b> under <b>Run</b> key run every time users sign-ins to the computer.
+* <b>RunOnce</b> - The <b>entries</b> under <b>RunOnce</b> key are deleted after users sign-ins to the computer and then computer runs the values.
+
+## HKEY_LOCAL_MACHINE vs HKEY_CURRENT_USER
+* <b>CURRENT_USER</b> - Runs the values only for the user that have the registry entries
+* <b>HKEY_LOCAL_MACHINE</b>
+    * <b>Run</b> - Runs the values for all users after sign-in
+    * <b>RunOnce</b> - <b>WORKS ONLY FOR ADMINISTRATOR GROUP MEMEBERS</b>
 
 # Examples
 ## Runing CMD in HKCU
