@@ -3,6 +3,8 @@
 <b>Documentation:</b> [Run and RunOnce Registry Keys](https://learn.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys) <br />
 
 # Short info
+Run and RunOnce allows us to run applications, commands, and scripts after successful user sign-in.
+
 ## Registry key locations
 * <b>HKEY_CURRENT_USER</b>\Software\Microsoft\Windows\CurrentVersion\\<b>Run</b>
 * <b>HKEY_CURRENT_USER</b>\Software\Microsoft\Windows\CurrentVersion\\<b>RunOnce</b>
