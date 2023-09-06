@@ -10,8 +10,8 @@
 * <b>HKEY_LOCAL_MACHINE</b>\Software\Microsoft\Windows\CurrentVersion\\<b>RunOnce</b>
 
 ## Run vs RunOnce
-* <b>Run</b> - The <b>values</b> under <b>Run</b> key run every time users sign-ins to the computer.
-* <b>RunOnce</b> - The <b>entries</b> under <b>RunOnce</b> key are deleted after users sign-ins to the computer and then computer runs the values.
+* <b>Run</b> - The <b>values</b> under <b>Run</b> key run every time users sign-in to the computer.
+* <b>RunOnce</b> - The <b>entries</b> under <b>RunOnce</b> key are deleted after users sign-in to the computer and then computer runs the values.
 
 ## HKEY_LOCAL_MACHINE vs HKEY_CURRENT_USER
 * <b>CURRENT_USER</b> - Runs the values only for the user that have the registry entries
