@@ -27,7 +27,7 @@ flowchart LR
 * <b>CURRENT_USER</b> - Runs the values only for the user that have the registry entries
 * <b>HKEY_LOCAL_MACHINE</b>
     * <b>Run</b> - Runs the values for all users on the computer after they sign-in
-    * <b>RunOnce</b> - Runs the values for all users on the computer after they sign-in but it <b>WORKS ONLY FOR ADMINISTRATOR GROUP MEMEBERS</b>
+    * <b>RunOnce</b> - Runs the values for all users on the computer after they sign-in, but it <b>WORKS ONLY FOR ADMINISTRATOR GROUP MEMEBERS</b>
 
 # Examples
 ## Runing CMD in HKCU
