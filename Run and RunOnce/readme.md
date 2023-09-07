@@ -32,11 +32,7 @@ flowchart LR
 # Examples
 ## Runing CMD in HKCU
 ```powershell
-# HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
-# HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce
-
 REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce" /v RunCMD /t REG_SZ /d "cmd /c echo Running from HKCU\RunOnce && whoami && pause"
-
 REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v RunCMD /t REG_SZ /d "cmd /c echo Running from HKCU\Run && whoami && pause"
 ```
 
@@ -54,11 +50,7 @@ REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce" /v RemoveBrave 
 
 ## Runing CMD in HKLM
 ```powershell
-# HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run
-# HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce
-
 # RunOnce in HKLM works only on administrator accounts
 REG ADD "HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce" /v RunCMD /t REG_SZ /d "cmd /c echo Running from HKLM\RunOnce && whoami && pause"
-
 REG ADD "HKLM\Software\Microsoft\Windows\CurrentVersion\Run" /v RunCMD /t REG_SZ /d "cmd /c echo Running from HKLM\Run && whoami && pause"
 ```
