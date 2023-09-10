@@ -22,7 +22,7 @@ flowchart TD
     a["User sign-in to the computer"] --> b["Active Setup starts"]
     b --> c{"Active Setup checks if key<br />RunCMD exists in users hive"}
     c --> |Key exists| d
-    c --> |Keys does not exist| e["Active Setup runs cmd.exe"]
+    c --> |Key does not exist| e["Active Setup runs cmd.exe"]
     e --> g["Active Setup waits cmd.exe to exit"]
     g --> z["Active Setup creates RunCMD key in user hive"]
     z --> d["Explorer starts"]
