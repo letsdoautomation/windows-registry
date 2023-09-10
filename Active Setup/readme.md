@@ -9,14 +9,23 @@ Active Setup allows us to execute commands once per user after successful sign-i
 * <b>HKEY_CURRENT_USER</b>\SOFTWARE\Microsoft\Active Setup\\<b>Installed Components</b>
 * <b>HKEY_CURRENT_USER</b>\SOFTWARE\Wow6432Node\Microsoft\Active Setup\\<b>Installed Components</b>
 
-## Active Setup order of execution
+## Active Setup order of execution example
+
+```powershell
+Path: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Active Setup\Installed Components
+Key: RunCMD
+StubPath: cmd.exe
+```
+
 ```mermaid
 flowchart TD
-    a["User sign-in to the computer"] --> b["Active Setup starts"] 
-    b --> c{"Compares LOCAL_MACHINE<br />Active Setup keys<br /> with CURRENT_USER keys"}
-    c --> |Keys match| d["Runs explorer.exe"]
-    c --> |Keys don't match| e["Runs values in StubPath for keys that the user didn't have"]
-    e --> g["Waits for the processes from Active Setup to finish"] --> d
+    a["User sign-in to the computer"] --> b["Active Setup starts"]
+    b --> c{"Active Setup checks if key<br />RunCMD exists in users hive"}
+    c --> |Key exists| d
+    c --> |Keys does not exist| e["Active Setup runs cmd.exe"]
+    e --> g["Active Setup waits cmd.exe to exit"]
+    g --> z["Active Setup creates RunCMD key in user hive"]
+    z --> d["Explorer starts"]
 ```
 
 ## Running cmd commands from Active Setup
@@ -32,12 +41,9 @@ REG ADD "HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\RunCMD" /v Ve
 
 ```mermaid
 flowchart TD
-    a["User sign-in to the computer"] --> b["Active Setup starts"] 
-    b --> c{"Compares LOCAL_MACHINE<br />Active Setup keys<br /> with CURRENT_USER keys"}
-    c --> |Keys match| d["Runs explorer.exe"]
-    c --> |Keys don't match| e["Runs values in StubPath for keys that the user didn't have"]
-    e --> g["Waits for the processes from Active Setup to finish"] --> d
-    d --> z["Runs entries in Run and RunOnce keys"]
+    a["User sign-in to the computer"] --> b["Active Setup starts"]
+    b --> c["Explorer starts"]
+    c --> z["Run and RunOnce starts"]
 ```
 
 ```powershell
