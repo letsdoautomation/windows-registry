@@ -2,10 +2,10 @@
 Active Setup allows us to execute commands once per user after successful sign-in to the computer.
 
 ## Registry key locations
-#### Machine
+#### <b>Machine</b>
 * <b>HKEY_LOCAL_MACHINE</b>\SOFTWARE\Microsoft\Active Setup\\<b>Installed Components</b>
 * <b>HKEY_LOCAL_MACHINE</b>\SOFTWARE\WOW6432Node\Microsoft\Active Setup\\<b>Installed Components</b>
-#### Current user
+#### <b>Current user</b>
 * <b>HKEY_CURRENT_USER</b>\SOFTWARE\Microsoft\Active Setup\\<b>Installed Components</b>
 * <b>HKEY_CURRENT_USER</b>\Software\Wow6432Node\Microsoft\Active Setup\\<b>Installed Components</b>
 
@@ -41,3 +41,6 @@ Download link: [Brave](https://github.com/brave/brave-browser) <br />
 ```powershell
 ni "HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\InstallBraveFromRunOnce" | New-ItemProperty -Name "StubPath" -Value 'REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce" /v InstallBrave /t REG_SZ /d "cmd /c echo installing software.. && cmd /c C:\BraveBrowserStandaloneSilentSetup.exe"'
 ```
+
+### My other videos
+[Windows Registry: Run and RunOnce](https://youtu.be/zgFzCq5uEPw) <br />
