@@ -7,7 +7,7 @@ Active Setup allows us to execute commands once per user after successful sign-i
 * <b>HKEY_LOCAL_MACHINE</b>\SOFTWARE\WOW6432Node\Microsoft\Active Setup\\<b>Installed Components</b>
 #### <b>Current user</b>
 * <b>HKEY_CURRENT_USER</b>\SOFTWARE\Microsoft\Active Setup\\<b>Installed Components</b>
-* <b>HKEY_CURRENT_USER</b>\Software\Wow6432Node\Microsoft\Active Setup\\<b>Installed Components</b>
+* <b>HKEY_CURRENT_USER</b>\SOFTWARE\Wow6432Node\Microsoft\Active Setup\\<b>Installed Components</b>
 
 ## Active Setup flow
 ```mermaid
