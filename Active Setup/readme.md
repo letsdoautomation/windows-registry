@@ -12,11 +12,11 @@ Active Setup allows us to execute commands once per user after successful sign-i
 ## Active Setup order of execution
 ```mermaid
 flowchart TD
-    a["User sign-in to the computer"] --> b["Computer starts active setup"] 
-    b --> c{"Compares HKLM\Active Setup<br/>keys to HKCU\Active Setup<br/>that have StubPath entry"}
-    c --> |Keys match| d["Computer runs explorer.exe"]
-    c --> |Keys don't match| e["Computer runs values in StubPath for keys that user didn't have"]
-    e --> g["Computer waits for the processes from Active Setup to finish"] --> d
+    a["User sign-in to the computer"] --> b["Active Setup starts"] 
+    b --> c{"Compares LOCAL_MACHINE<br />Active Setup keys<br /> with CURRENT_USER keys"}
+    c --> |Keys match| d["Runs explorer.exe"]
+    c --> |Keys don't match| e["Runs values in StubPath for keys that the user didn't have"]
+    e --> g["Waits for the processes from Active Setup to finish"] --> d
 ```
 
 ## Running cmd commands from Active Setup
@@ -32,12 +32,12 @@ REG ADD "HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\RunCMD" /v Ve
 
 ```mermaid
 flowchart TD
-    a["User sign-in to the computer"] --> b["Computer starts active setup"] 
-    b --> c{"Compares HKLM\Active Setup<br/>keys to HKCU\Active Setup<br/>that have StubPath entry"}
-    c --> |Keys match| d["Computer runs explorer.exe"]
-    c --> |Keys don't match| e["Computer runs values in StubPath for keys that user didn't have"]
-    e --> g["Computer waits for the processes from Active Setup to finish"] --> d
-    d --> z["Computer runs entries in Run and RunOnce keys"]
+    a["User sign-in to the computer"] --> b["Active Setup starts"] 
+    b --> c{"Compares LOCAL_MACHINE<br />Active Setup keys<br /> with CURRENT_USER keys"}
+    c --> |Keys match| d["Runs explorer.exe"]
+    c --> |Keys don't match| e["Runs values in StubPath for keys that the user didn't have"]
+    e --> g["Waits for the processes from Active Setup to finish"] --> d
+    d --> z["Runs entries in Run and RunOnce keys"]
 ```
 
 ```powershell
