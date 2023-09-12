@@ -30,11 +30,11 @@ flowchart TD
 
 ## Running cmd commands from Active Setup
 ```powershell
-REG ADD "HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\RunCMD" /v StubPath /t REG_SZ /d "cmd /c echo Running from HKLM\Active Setup && whoami && pause"
+REG ADD "HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\RunCMDCommands" /v StubPath /t REG_SZ /d "cmd /c echo Running from HKLM\Active Setup && whoami && pause"
 ```
 
 ```powershell
-REG ADD "HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\RunCMD" /v Version /t REG_SZ /d "1,1,1,1"
+REG ADD "HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\RunCMDCommands" /v Version /t REG_SZ /d "1,1,1,1"
 ```
 
 ## Running cmd commands from Active Setup and RunOnce registry
